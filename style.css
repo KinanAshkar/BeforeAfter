@@ -1,0 +1,74 @@
+body{
+    background-color: #eee;
+}
+.parent{
+    overflow: hidden;
+    margin: 30px auto;
+    counter-increment: counter;
+}
+.one{
+    background-image: linear-gradient(120deg, lightblue 0%, #fda085 100%);
+    padding: 10px;
+    width:600px;
+    float: left;
+    position: relative;
+    box-shadow: 1px 2px 15px -7px;
+    transition:0.3s ease-in-out;
+}
+.one::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent purple transparent transparent;
+    left: -20px;
+    top: 50%;
+    margin-top: -10px;
+}
+.one::after{
+    content: counter(counter);
+    position: absolute;
+    background-color: purple;
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    right: -10px;
+    top:50%;
+    margin-top: -10px;
+    transition: 0.3s ease-in-out;
+}
+.user{
+    background-image: linear-gradient(120deg, lightblue 0%, #fda085 100%);
+    border-radius: 50%;
+    box-shadow: 1px 2px 15px -7px;
+    transition:0.3s ease-in-out;
+    width: 50px;
+    font-size: 50px;
+    padding: 10px;
+    height: 55.5px;
+    text-align: center;
+    margin-right: 20px;
+    float: left;
+}
+.user:hover{
+    transform: translate(-20px);
+}
+.one:hover{
+    transform: scale(1.02);
+}
+::selection{
+    background-color: transparent;
+    color: white;
+}
+.one::first-line{
+    color: darkgrey;
+    font-style: italic;
+}
+.one:hover::after{
+    transform: rotateZ(360deg);
+}
